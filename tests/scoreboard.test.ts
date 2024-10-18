@@ -7,7 +7,8 @@ describe('Scoreboard', () => {
         scoreboard = new Scoreboard();
     });
 
-    test('Get the list of ongoing matches:', () => {
-        expect(scoreboard.getSummary()).toEqual([]);
+    test('Allow to start a match and get the list of ongoing matches:', () => {
+        scoreboard.startMatch('Poland', 'Brazil');
+        expect(scoreboard.getSummary()).toEqual(['Poland 0 - Brasil 0']);
     });
 });
