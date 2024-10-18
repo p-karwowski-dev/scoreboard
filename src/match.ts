@@ -6,4 +6,8 @@ export default class Match {
         public awayScore: number = 0,
         public startTime: Date = new Date()
     ) {}
+
+    public getInfo(): string {
+        return `${this.homeTeam} ${this.homeScore} - ${this.awayTeam} ${this.awayScore}`;
+    }
 }
