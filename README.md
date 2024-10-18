@@ -9,6 +9,6 @@ A simple TypeScript library for managing a live football scoreboard for the Worl
 
 ## Installation:
 - requires Node.js and npm
-- clone repository: "git clone https://github.com/p-karwowski-dev/football-scoreboard.git"
+- clone repository: "git clone https://github.com/p-karwowski-dev/scoreboard.git"
 - run "npm install"
 - run "npm run test"
