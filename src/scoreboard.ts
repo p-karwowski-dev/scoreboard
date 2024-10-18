@@ -19,14 +19,11 @@ export default class Scoreboard {
         awayTeam: string,
         homeScore: number,
         awayScore: number
-    ): string {
+    ): void {
         const match = this.findMatch(homeTeam, awayTeam);
-        if (match === undefined) {
-            return 'Match not found';
-        } else {
+        if (match) {
             match.homeScore = homeScore;
             match.awayScore = awayScore;
-            return 'Score updated';
         }
     }
 
