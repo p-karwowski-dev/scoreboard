@@ -25,4 +25,17 @@ describe('Scoreboard', () => {
             'Match not found'
         );
     });
+
+    test('Allow to start multiple matches and get the summary of ongoing matches in the score-time order:', () => {
+        scoreboard.startMatch('Poland', 'Brazil');
+        scoreboard.startMatch('Spain', 'Italy');
+        scoreboard.updateScore('Spain', 'Italy', 2, 1);
+        scoreboard.startMatch('Germany', 'France');
+        scoreboard.updateScore('Germany', 'France', 1, 2);
+        expect(scoreboard.getSummary()).toEqual([
+            'Spain 2 - Italy 1',
+            'Germany 1 - France 2',
+            'Poland 0 - Brazil 0',
+        ]);
+    });
 });
