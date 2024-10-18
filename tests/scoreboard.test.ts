@@ -1,9 +1,13 @@
-import Scoreboard from "../src/scoreboard";
+import Scoreboard from '../src/scoreboard';
 
-describe("Scoreboard", () => {
+describe('Scoreboard', () => {
     let scoreboard: Scoreboard;
-    scoreboard = new Scoreboard("hello");
-    test("test env health check", () => {
-        expect(scoreboard.envTest).toEqual("hello");
-    })
+
+    beforeEach(() => {
+        scoreboard = new Scoreboard();
+    });
+
+    test('Get the list of ongoing matches:', () => {
+        expect(scoreboard.getSummary()).toEqual([]);
+    });
 });

@@ -1,3 +1,9 @@
+import Match from './match';
+
 export default class Scoreboard {
-  constructor( public envTest: string) {}
+    private matches: Match[] = [];
+
+    getSummary() {
+        return this.matches;
+    }
 }
