@@ -36,4 +36,10 @@ describe('Scoreboard', () => {
         scoreboard.finishMatch('Poland', 'Brazil');
         expect(scoreboard.getSummary()).toEqual([]);
     });
+
+    test('Edge case: do not allow start the same match twice', () => {
+        scoreboard.startMatch('Poland', 'Brazil');
+        scoreboard.startMatch('Poland', 'Brazil');
+        expect(scoreboard.getSummary()).toEqual(['Poland 0 - Brazil 0']);
+    });
 });

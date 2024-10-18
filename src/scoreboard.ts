@@ -11,7 +11,10 @@ export default class Scoreboard {
     }
 
     startMatch(homeTeam: string, awayTeam: string): void {
-        this.matches.push(new Match(homeTeam, awayTeam));
+        const match = this.findMatch(homeTeam, awayTeam);
+        if (!match) {
+            this.matches.push(new Match(homeTeam, awayTeam));
+        }
     }
 
     updateScore(
