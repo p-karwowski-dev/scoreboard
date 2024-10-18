@@ -31,6 +31,13 @@ export default class Scoreboard {
     }
 
     getSummary() {
-        return this.matches.map((match) => match.getInfo());
+        return this.matches
+            .sort((a, b) => {
+                if (a.getScore() === b.getScore()) {
+                    return a.startTime.getTime() - b.startTime.getTime();
+                }
+                return b.getScore() - a.getScore();
+            })
+            .map((match) => match.getInfo());
     }
 }

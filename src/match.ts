@@ -10,4 +10,8 @@ export default class Match {
     public getInfo(): string {
         return `${this.homeTeam} ${this.homeScore} - ${this.awayTeam} ${this.awayScore}`;
     }
+
+    public getScore(): number {
+        return this.homeScore + this.awayScore;
+    }
 }
