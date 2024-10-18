@@ -40,4 +40,11 @@ export default class Scoreboard {
             })
             .map((match) => match.getInfo());
     }
+
+    finishMatch(homeTeam: string, awayTeam: string): void {
+        this.matches = this.matches.filter(
+            (match) =>
+                match.homeTeam !== homeTeam || match.awayTeam !== awayTeam
+        );
+    }
 }

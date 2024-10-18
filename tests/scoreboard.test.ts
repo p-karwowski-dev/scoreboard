@@ -38,4 +38,10 @@ describe('Scoreboard', () => {
             'Poland 0 - Brazil 0',
         ]);
     });
+
+    test('Allow to finish a match', () => {
+        scoreboard.startMatch('Poland', 'Brazil');
+        scoreboard.finishMatch('Poland', 'Brazil');
+        expect(scoreboard.getSummary()).toEqual([]);
+    });
 });
